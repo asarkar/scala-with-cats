@@ -1,4 +1,4 @@
-package intro.show
+package ch01.show
 
 import cats.Show
 import cats.instances.int.catsStdShowForInt

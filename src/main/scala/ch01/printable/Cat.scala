@@ -1,4 +1,4 @@
-package intro.printable
+package ch01.printable
 
 // This is a standard use of the type class pattern.
 // First we define a set of custom data types for our application.

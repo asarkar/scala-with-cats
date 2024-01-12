@@ -1,4 +1,4 @@
-package intro.show
+package ch01.show
 
 import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should.Matchers.shouldBe

@@ -1,4 +1,4 @@
-package intro.printable
+package ch01.printable
 
 /*
 1.3 Exercise: Printable Library.

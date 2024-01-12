@@ -1,4 +1,4 @@
-package intro.printable
+package ch01.printable
 
 import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should.Matchers.shouldBe
