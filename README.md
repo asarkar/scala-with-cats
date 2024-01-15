@@ -9,6 +9,7 @@ Official GitHub repo: https://github.com/scalawithcats/scala-with-cats
 1. [Introduction](src/main/scala/ch01)
 2. [Monoids and Semigroups](src/main/scala/ch02)
 3. [Functors](src/main/scala/ch03)
+4. [Monads](src/main/scala/ch04)
 
 ## Running tests
 
