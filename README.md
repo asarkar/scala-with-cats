@@ -10,6 +10,9 @@ Official GitHub repo: https://github.com/scalawithcats/scala-with-cats
 2. [Monoids and Semigroups](src/main/scala/ch02)
 3. [Functors](src/main/scala/ch03)
 4. [Monads](src/main/scala/ch04)
+5. [Monad Transformers](src/main/scala/ch05)
+6. [Semigroupal and Applicative](src/main/scala/ch06)
+7. [Foldable and Traverse]()(src/main/scala/ch07)
 
 ## Running tests
 
