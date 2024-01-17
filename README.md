@@ -12,7 +12,11 @@ Official GitHub repo: https://github.com/scalawithcats/scala-with-cats
 4. [Monads](src/main/scala/ch04)
 5. [Monad Transformers](src/main/scala/ch05)
 6. [Semigroupal and Applicative](src/main/scala/ch06)
-7. [Foldable and Traverse]()(src/main/scala/ch07)
+7. [Foldable and Traverse](src/main/scala/ch07)
+8. [Case Study: Testing Asynchronous Code](src/main/scala/ch08)
+9. [Case Study: Map-Reduce](src/main/scala/ch09)
+10. [Case Study: Data Validation](src/main/scala/ch10)
+11. [Case Study: CRDTs](src/main/scala/ch11)
 
 ## Running tests
 

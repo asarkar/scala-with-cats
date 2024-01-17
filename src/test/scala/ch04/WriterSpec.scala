@@ -6,7 +6,7 @@ import scala.concurrent.duration.*
 import scala.concurrent.{Await, Future}
 
 class WriterSpec extends AnyFunSpec:
-  it("factorial should be able maintain the order of logging"):
+  it("factorial should maintain the order of logging"):
     val computations = Future.sequence(
       Vector(
         Future(Writer.factorial(5)),

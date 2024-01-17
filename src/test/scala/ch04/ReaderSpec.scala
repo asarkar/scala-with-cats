@@ -3,7 +3,7 @@ import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should.Matchers.shouldBe
 
 class ReaderSpec extends AnyFunSpec:
-  it("DbReader should be able to check password"):
+  it("DbReader should check password"):
     val users = Map(
       1 -> "dade",
       2 -> "kate",
