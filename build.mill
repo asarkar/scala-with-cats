@@ -1,0 +1,44 @@
+package build
+
+import mill._, scalalib._, scalafmt._
+import $packages._
+import $file.{versions => v}
+
+def isBookChapter(p: os.Path) = os.isDir(p) && "ch\\d{2}".r.matches(p.baseName)
+
+def moduleNames = interp.watchValue(
+    os.walk(millSourcePath, !isBookChapter(_), maxDepth = 1)
+      .map(_.last)
+)
+
+object modules extends Cross[CatsModule](moduleNames)
+
+trait CatsModule extends ScalaModule with Cross.Module[String] with ScalafmtModule {
+
+  val scalaVersion = v.scalaVersion
+
+  // Ends with 'modules' that need to be removed
+  def millSourcePath = super.millSourcePath / os.up / crossValue
+
+  def scalacOptions: T[Seq[String]] = Seq(
+    "-encoding", "UTF-8",
+    "-feature",
+    "-Werror",
+    "-explain",
+    "-deprecation",
+    "-unchecked",
+    "-Wunused:all",
+    "-rewrite",
+    "-indent",
+    "-source", "future",
+  )
+
+  object test extends ScalaTests with TestModule.ScalaTest {
+   val commonDeps = Seq(
+     ivy"org.scalatest::scalatest:${v.scalatestVersion}",
+     ivy"org.scalatestplus::scalacheck-1-18:${v.scalacheckVersion}"
+   )
+   
+   def ivyDeps = Task{commonDeps}
+  }
+}

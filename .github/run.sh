@@ -8,7 +8,7 @@ no_lint=0
 while (( $# > 0 )); do
    case "$1" in
    	--help)
-			printf "run.sh [OPTION]... [PKG]\n"
+			printf "run.sh [OPTION]... [DIR]\n"
 			printf "options:\n"
 			printf "\t--help			Show help\n"
 			printf "\t--no-test		Skip tests\n"
@@ -29,21 +29,24 @@ while (( $# > 0 )); do
    esac
 done
 
+./mill __.compile
+
 if (( no_test == 0 )); then
   if [[ -z "$1" ]]; then
-    sbt test
+    ./mill __.test
+  elif ./mill resolve modules["$1"].__.test &>/dev/null; then
+    ./mill modules["$1"].__.test
   else
-    green='\033[1;32m'
+    red='\033[0;31m'
     no_color='\033[0m'
-	printf "Running tests in packages matching: %b%s*%b\n" "$green" "$1" "$no_color"
-    sbt "Test / testOnly $1*"
+	  printf "%bNo tests found in: %s%b\n" "$red" "$1" "$no_color"
   fi
 fi
 
 if (( no_lint == 0 )); then
 	if [[ -z "${CI}" ]]; then
-	  sbt scalafmtAll
+	  ./mill mill.scalalib.scalafmt.ScalafmtModule/reformatAll modules[_].sources
 	else
-	  sbt scalafmtCheckAll
+		./mill mill.scalalib.scalafmt.ScalafmtModule/checkFormatAll modules[_].sources
 	fi
 fi
