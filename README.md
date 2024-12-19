@@ -9,6 +9,9 @@ The older code is available in branches.
 
 ## Contents
 
+2. [Algebraic Data Types](ch02)
+3. [Objects as Codata](ch03)
+
 ## Running tests
 ```
 ./.github/run.sh <directory>
