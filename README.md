@@ -11,6 +11,8 @@ The older code is available in branches.
 
 2. [Algebraic Data Types](ch02)
 3. [Objects as Codata](ch03)
+4. [Contextual Abstraction](ch04)
+5. [Reified Interpreters](ch05)
 
 ## Running tests
 ```
