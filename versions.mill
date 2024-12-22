@@ -3,3 +3,4 @@ package build
 val scalaVersion = "3.6.2"
 val scalatestVersion = "3.2.19"
 val scalacheckVersion = "3.2.19.0"
+val catsVersion = "2.12.0"

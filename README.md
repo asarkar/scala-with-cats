@@ -13,6 +13,7 @@ The older code is available in branches.
 3. [Objects as Codata](ch03)
 4. [Contextual Abstraction](ch04)
 5. [Reified Interpreters](ch05)
+6. [Using Cats](ch06)
 
 ## Running tests
 ```

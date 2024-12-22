@@ -33,6 +33,10 @@ trait CatsModule extends ScalaModule with Cross.Module[String] with ScalafmtModu
     "-source", "future",
   )
 
+  def ivyDeps = Agg(
+    ivy"org.typelevel::cats-core:${v.catsVersion}"
+  )
+
   object test extends ScalaTests with TestModule.ScalaTest {
    val commonDeps = Seq(
      ivy"org.scalatest::scalatest:${v.scalatestVersion}",
