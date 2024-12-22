@@ -1,6 +1,7 @@
 package ch05
 
 // Continuation-Passing style.
+/*  Exercise: CPS Arithmetic */
 enum ExpressionC:
   case Literal(value: Double)
   case Addition(left: ExpressionC, right: ExpressionC)

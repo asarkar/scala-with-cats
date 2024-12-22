@@ -1,5 +1,6 @@
 package ch05
 
+/* Exercise: Trampolined Arithmetic */
 enum ExpressionT:
   case Literal(value: Double)
   case Addition(left: ExpressionT, right: ExpressionT)

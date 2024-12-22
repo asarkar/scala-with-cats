@@ -1,5 +1,8 @@
 package ch03
 
+/*
+3.6 Exercise: Sets
+ */
 trait Set[A]:
 
   def contains(elt: A): Boolean

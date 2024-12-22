@@ -16,6 +16,10 @@ trait Stream[A]:
       def head: B         = f(self.head)
       def tail: Stream[B] = self.tail.map(f)
 
+  /*
+  Exercise: Stream Combinators
+  Implement filter, zip, and scanLeft on Stream.
+   */
   def filter(p: A => Boolean): Stream[A] =
     lazy val self = if p(head) then this else tail.filter(p)
     new Stream[A]:

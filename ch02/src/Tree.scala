@@ -10,6 +10,21 @@ enum Tree[A]:
   case Leaf(value: A)
   case Node(left: Tree[A], right: Tree[A])
 
+  /*
+  Exercise: Methods for Tree
+
+  Write some methods for Tree. Implement
+
+  - size, which returns the number of values (Leafs) stored in the Tree;
+  - contains, which returns true if the Tree contains a given element of type A, and false otherwise; and
+  - map, which creates a Tree[B] given a function A => B
+
+  Use whichever you prefer of pattern matching or dynamic dispatch to implement the methods.
+
+  Exercise: Using Fold
+  Prove to yourself that you can replace structural recursion with calls to fold,
+  by redefining size, contains, and map for Tree using only fold.
+   */
   /** @return
     *   the number of values (Leafs) stored in the Tree
     */
@@ -38,6 +53,10 @@ enum Tree[A]:
 //      case Tree.Leaf(value) => Tree.Leaf(f(value))
 //      case Tree.Node(left, right) => Tree.Node(left.map(f), right.map(f))
 
+  /*
+  Exercise: Tree Fold
+  Implement a fold for Tree defined earlier.
+   */
   def fold[B](f: (A => B), g: (B, B) => B): B =
     this match
       case Tree.Node(left, right) => g(left.fold(f, g), right.fold(f, g))

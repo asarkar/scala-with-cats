@@ -10,6 +10,10 @@ enum MyList[A]:
   case Empty()
   case Pair(_head: A, _tail: MyList[A])
 
+  /*
+  Exercise: Map
+  Once you’ve completed iterate, try to implement map in terms of unfold.
+   */
   def map[B](f: A => B): MyList[B] =
 //    this match
 //      case Empty()          => Empty()
@@ -50,5 +54,9 @@ object MyList:
   def fill[A](n: Int)(elem: => A): MyList[A] =
     unfold(0)(_ == n, _ => elem, _ + 1)
 
+  /*
+  Exercise: Iterate
+  Implement iterate using the same reasoning as we did for fill.
+   */
   def iterate[A](start: A, len: Int)(f: A => A): MyList[A] =
     unfold((0, start))(_._1 == len, _._2, (i, a) => (i + 1, f(a)))

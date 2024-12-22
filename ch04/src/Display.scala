@@ -1,5 +1,8 @@
 package ch04
 
+/*
+4.5 Exercise: Display Library
+*/
 trait Display[A]:
   def display(value: A): String
 

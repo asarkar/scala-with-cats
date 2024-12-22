@@ -14,6 +14,10 @@ def and(l: Bool, r: Bool): Bool =
     def `if`[A](t: A)(f: A): A =
       l.`if`(r)(False).`if`(t)(f)
 
+/*
+Exercise: Or and Not
+Test your understanding of Bool by implementing or and not.
+ */
 def or(l: Bool, r: Bool): Bool =
   new Bool:
     def `if`[A](t: A)(f: A): A =

@@ -16,6 +16,19 @@ has every method call in tail position. Due to Scala runtime limitations not all
 in tail position can be converted to tail calls, so we reified calls and returns into
 data structures used by a recursive loop called a trampoline.
  */
+/*
+Exercise: Arithmetic
+Now it’s your turn to practice using reification. Your task is to implement an interpreter
+for arithmetic expressions. An expression is:
+
+- a literal number, which takes a Double and produces an Expression;
+- an addition of two expressions;
+- a substraction of two expressions;
+- a multiplication of two expressions; or
+- a division of two expressions;
+
+Reify this description as a type Expression.
+ */
 enum Expression:
   case Literal(value: Double)
   case Addition(left: Expression, right: Expression)
