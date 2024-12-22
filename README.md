@@ -15,6 +15,7 @@ The older code is available in branches.
 5. [Reified Interpreters](ch05)
 6. [Using Cats](ch06)
 7. [Monoids and Semigroups](ch07)
+8. [Functors](ch08)
 
 ## Running tests
 ```
