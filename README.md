@@ -14,6 +14,7 @@ The older code is available in branches.
 4. [Contextual Abstraction](ch04)
 5. [Reified Interpreters](ch05)
 6. [Using Cats](ch06)
+7. [Monoids and Semigroups](ch07)
 
 ## Running tests
 ```
