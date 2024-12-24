@@ -4,8 +4,7 @@ package ch07
 We can use Semigroups and Monoids by importing two things: the type classes themselves, 
 and the semigroup syntax to give us the |+| operator.
 */
-import cats.{Monoid as CatsMonoid}
-import cats.syntax.semigroup.catsSyntaxSemigroup
+import cats.syntax.semigroup.catsSyntaxSemigroup  // A |+| A if Semigroup[A] exists
 
 object Lib:
 
@@ -19,7 +18,7 @@ object Lib:
   People now want to add List[Option[Int]]. Change add so this is possible. The SuperAdder code base
   is of the highest quality, so make sure there is no code duplication!
    */
-  def add[A: CatsMonoid as m](items: List[A]): A =
+  def add[A: cats.Monoid as m](items: List[A]): A =
     items.foldLeft(m.empty)(_ |+| _)
 
 //   import cats.instances.int.catsKernelStdGroupForInt

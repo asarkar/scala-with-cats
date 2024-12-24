@@ -16,6 +16,7 @@ The older code is available in branches.
 6. [Using Cats](ch06)
 7. [Monoids and Semigroups](ch07)
 8. [Functors](ch08)
+9. [Monads](ch09)
 
 ## Running tests
 ```

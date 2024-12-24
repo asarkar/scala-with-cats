@@ -1,11 +1,8 @@
 package ch06
 
-import cats.Show
-import cats.instances.int.catsStdShowForInt
-import cats.instances.string.catsStdShowForString
-import cats.syntax.show.toShow
-import cats.Eq
-import cats.syntax.eq.catsSyntaxEq
+import cats.{Eq, Show}
+import cats.syntax.show.toShow  // A.show if Show[A] exists 
+import cats.syntax.eq.catsSyntaxEq  // ===
 
 final case class Cat(name: String, age: Int, color: String)
 
