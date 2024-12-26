@@ -2,14 +2,15 @@ package ch09
 
 import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should.Matchers.shouldBe
-import cats.syntax.flatMap.toFlatMapOps  // flatMap
-import cats.syntax.functor.toFunctorOps  // map
+import cats.syntax.flatMap.toFlatMapOps // flatMap
+import cats.syntax.functor.toFunctorOps // map
 import Tree.given
 
 class TreeSpec extends AnyFunSpec:
   describe("Tree monad"):
     it("should support flatMap, map, and for-comprehension"):
-      val actual = Tree.branch(Tree.leaf(100), Tree.leaf(200))
+      val actual = Tree
+        .branch(Tree.leaf(100), Tree.leaf(200))
         .flatMap(x => Tree.branch(Tree.leaf(x - 1), Tree.leaf(x + 1)))
       val expected = Tree.branch(
         Tree.branch(Tree.leaf(99), Tree.leaf(101)),
@@ -18,9 +19,9 @@ class TreeSpec extends AnyFunSpec:
       actual shouldBe expected
 
       val actual2 = for
-        a <- Tree.branch(Tree.leaf(100), Tree.leaf(200))  // flatMap
-        b <- Tree.branch(Tree.leaf(a - 10), Tree.leaf(a + 10))  // flatMap
-        c <- Tree.branch(Tree.leaf(b - 1), Tree.leaf(b + 1))  // map
+        a <- Tree.branch(Tree.leaf(100), Tree.leaf(200))       // flatMap
+        b <- Tree.branch(Tree.leaf(a - 10), Tree.leaf(a + 10)) // flatMap
+        c <- Tree.branch(Tree.leaf(b - 1), Tree.leaf(b + 1))   // map
       yield c
       val expected2 = Tree.branch(
         Tree.branch(

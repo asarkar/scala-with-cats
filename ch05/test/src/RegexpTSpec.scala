@@ -7,4 +7,3 @@ class RegexpTSpec extends AnyFunSpec:
   describe("RegexpT"):
     it("matches"):
       RegexpT("a").repeat.matches("a" * 20000) shouldBe true
-

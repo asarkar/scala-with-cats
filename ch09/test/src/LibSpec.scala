@@ -11,12 +11,12 @@ import scala.concurrent.{Await, Future}
 
 class LibSpec extends AnyFunSpec:
   describe("MonadError"):
-    it("validateAdult"):    
-        Lib.validateAdult[Try](18).success.value shouldBe 18
-        Lib.validateAdult[Try](8).failure.exception shouldBe an[IllegalArgumentException]
-        type ExceptionOr[A] = Either[Throwable, A]
-        Lib.validateAdult[ExceptionOr](-1).left.value shouldBe an[IllegalArgumentException]
-        
+    it("validateAdult"):
+      Lib.validateAdult[Try](18).success.value shouldBe 18
+      Lib.validateAdult[Try](8).failure.exception shouldBe an[IllegalArgumentException]
+      type ExceptionOr[A] = Either[Throwable, A]
+      Lib.validateAdult[ExceptionOr](-1).left.value shouldBe an[IllegalArgumentException]
+
   describe("Writer"):
     it("factorial should maintain the order of logging"):
       val computations = Future.sequence(

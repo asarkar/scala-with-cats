@@ -38,11 +38,9 @@ trait CatsModule extends ScalaModule with Cross.Module[String] with ScalafmtModu
   )
 
   object test extends ScalaTests with TestModule.ScalaTest {
-   val commonDeps = Seq(
+   def ivyDeps = Agg(
      ivy"org.scalatest::scalatest:${v.scalatestVersion}",
      ivy"org.scalatestplus::scalacheck-1-18:${v.scalacheckVersion}"
    )
-   
-   def ivyDeps = Task{commonDeps}
   }
 }

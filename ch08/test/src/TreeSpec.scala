@@ -1,7 +1,7 @@
 package ch08
 import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should.Matchers.shouldBe
-import cats.syntax.functor.toFunctorOps  // map
+import cats.syntax.functor.toFunctorOps // map
 
 class TreeSpec extends AnyFunSpec:
   describe("Tree Functor"):

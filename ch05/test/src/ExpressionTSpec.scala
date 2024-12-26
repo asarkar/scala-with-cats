@@ -8,4 +8,3 @@ class ExpressionTSpec extends AnyFunSpec:
     it("eval"):
       val fortyTwo = ((ExpressionT(15.0) + ExpressionT(5.0)) * ExpressionT(2.0) + ExpressionT(2.0)) / ExpressionT(1.0)
       fortyTwo.eval shouldBe 42.0d
-

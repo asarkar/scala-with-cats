@@ -18,6 +18,3 @@ class StreamSpec extends AnyFunSpec:
       Stream.naturals.take(5) shouldBe (1 to 5)
       Stream.naturals2.take(5) shouldBe (1 to 5)
       Stream.naturals3.take(5) shouldBe (1 to 5)
-
-
-

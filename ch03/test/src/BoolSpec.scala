@@ -20,4 +20,3 @@ class BoolSpec extends AnyFunSpec:
     it("not"):
       not(True).`if`("yes")("no") shouldBe "no"
       not(False).`if`("yes")("no") shouldBe "yes"
-

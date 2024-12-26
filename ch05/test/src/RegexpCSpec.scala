@@ -9,17 +9,16 @@ class RegexpCSpec extends AnyFunSpec:
     it("matches"):
       val txts =
         Table(
-            ("txt", "match"),
-            ("Scala", true),
-            ("Scalalalala", true),
-            ("Sca", false),
-            ("Scalal", false),
-            ("Scalaland", false)
+          ("txt", "match"),
+          ("Scala", true),
+          ("Scalalalala", true),
+          ("Sca", false),
+          ("Scalal", false),
+          ("Scalaland", false)
         )
       // left-associative
       val regexp = RegexpC("Sca") ++ RegexpC("la") ++ RegexpC("la").repeat
 
-      forAll (txts) { (txt: String, `match`: Boolean) =>
+      forAll(txts) { (txt: String, `match`: Boolean) =>
         regexp.matches(txt) shouldBe `match`
       }
-

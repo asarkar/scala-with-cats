@@ -11,4 +11,3 @@ class CodataSpec extends AnyFunSpec:
 
       val product = list()(1, (a, b) => a * b)
       product shouldBe 6
-

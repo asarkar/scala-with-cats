@@ -17,6 +17,9 @@ The older code is available in branches.
 7. [Monoids and Semigroups](ch07)
 8. [Functors](ch08)
 9. [Monads](ch09)
+10. [Monad Transformers](ch10)
+11. [Semigroupal and Applicative](ch11)
+12. [Foldable and Traverse](ch12)
 
 ## Running tests
 ```

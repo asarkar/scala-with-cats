@@ -30,10 +30,3 @@ class MyListSpec extends AnyFunSpec:
     it("evens"):
       val actual = MyList.iterate(0, 5)(_ + 1).map(_ * 2)
       actual.toSeq shouldBe (0 to 8 by 2)
-
-
-
-
-
-
-

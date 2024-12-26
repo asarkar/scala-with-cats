@@ -11,9 +11,8 @@ class SetSpec extends AnyFunSpec:
         Evens.union(ListSet.empty.insert(1).insert(3))
 
       evensAndOne.contains(1) shouldBe true
-      evensAndOthers.contains(1)  shouldBe true
-      evensAndOne.contains(2)  shouldBe true
-      evensAndOthers.contains(2)  shouldBe true
-      evensAndOne.contains(3)  shouldBe false
-      evensAndOthers.contains(3)  shouldBe true
-
+      evensAndOthers.contains(1) shouldBe true
+      evensAndOne.contains(2) shouldBe true
+      evensAndOthers.contains(2) shouldBe true
+      evensAndOne.contains(3) shouldBe false
+      evensAndOthers.contains(3) shouldBe true
