@@ -16,10 +16,10 @@ trait Codec[A]:
       override def decode(value: String): B =
         dec(self.decode(value))
 
-def encode[A : Codec as c](value: A): String =
+def encode[A: Codec as c](value: A): String =
   c.encode(value)
 
-def decode[A : Codec as c](value: String): A =
+def decode[A: Codec as c](value: String): A =
   c.decode(value)
 
 object Codec:
@@ -37,5 +37,5 @@ object Codec:
     stringCodec.imap(_.toDouble, _.toString)
 
   // Implement a Codec for the Box type.
-  given boxCodec: [A : Codec as c] => Codec[Box[A]] =
+  given boxCodec: [A: Codec as c] => Codec[Box[A]] =
     c.imap[Box[A]](Box(_), _.value)

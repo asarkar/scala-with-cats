@@ -1,10 +1,10 @@
 package ch07
 
 /*
-We can use Semigroups and Monoids by importing two things: the type classes themselves, 
+We can use Semigroups and Monoids by importing two things: the type classes themselves,
 and the semigroup syntax to give us the |+| operator.
-*/
-import cats.syntax.semigroup.catsSyntaxSemigroup  // A |+| A if Semigroup[A] exists
+ */
+import cats.syntax.semigroup.catsSyntaxSemigroup // A |+| A if Semigroup[A] exists
 
 object Lib:
 

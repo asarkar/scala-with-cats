@@ -12,32 +12,32 @@ package ch09
   despite the fact that we haven’t directly implemented flatMap or map on Tree.
 
   Don't feel you have to make tailRecM tail-recursive. Doing so is quite difficult.
-    */
-  enum Tree[A]:
-    case Leaf(value: A)
-    case Branch(left: Tree[A], right: Tree[A])
+ */
+enum Tree[A]:
+  case Leaf(value: A)
+  case Branch(left: Tree[A], right: Tree[A])
 
-  object Tree:
-    import Tree.*
+object Tree:
+  import Tree.*
 
-    given cats.Monad[Tree]:
-      override def pure[A](x: A): Tree[A] =
-          Leaf(x)
+  given cats.Monad[Tree]:
+    override def pure[A](x: A): Tree[A] =
+      Leaf(x)
 
-      override def flatMap[A, B](t: Tree[A])(f: A => Tree[B]): Tree[B] =
+    override def flatMap[A, B](t: Tree[A])(f: A => Tree[B]): Tree[B] =
       t match
-          case Leaf(x)      => f(x)
-          case Branch(l, r) => Branch(flatMap(l)(f), flatMap(r)(f))
+        case Leaf(x)      => f(x)
+        case Branch(l, r) => Branch(flatMap(l)(f), flatMap(r)(f))
 
-      // Not stack-safe!
-      override def tailRecM[A, B](a: A)(f: A => Tree[Either[A, B]]): Tree[B] =
+    // Not stack-safe!
+    override def tailRecM[A, B](a: A)(f: A => Tree[Either[A, B]]): Tree[B] =
       flatMap(f(a)):
-          case Left(value)  => tailRecM(value)(f)
-          case Right(value) => Leaf(value)
+        case Left(value)  => tailRecM(value)(f)
+        case Right(value) => Leaf(value)
 
-    // Smart constructors to help the compiler.
-    def branch[A](left: Tree[A], right: Tree[A]): Tree[A] =
-      Branch(left, right)
+  // Smart constructors to help the compiler.
+  def branch[A](left: Tree[A], right: Tree[A]): Tree[A] =
+    Branch(left, right)
 
-    def leaf[A](value: A): Tree[A] =
-      Leaf(value)
+  def leaf[A](value: A): Tree[A] =
+    Leaf(value)

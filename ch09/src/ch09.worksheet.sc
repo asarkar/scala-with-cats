@@ -1,8 +1,8 @@
 import cats.{Id, Eval, MonadError}
 import cats.data.{Reader, Writer, State}
-import cats.syntax.functor.toFunctorOps  // map
-import cats.syntax.flatMap.toFlatMapOps  // flatMap
-import cats.syntax.applicative.catsSyntaxApplicativeId   // pure
+import cats.syntax.functor.toFunctorOps                // map
+import cats.syntax.flatMap.toFlatMapOps                // flatMap
+import cats.syntax.applicative.catsSyntaxApplicativeId // pure
 import cats.syntax.writer.catsSyntaxWriterId           // tell
 
 // 9.3 The Identity Monad

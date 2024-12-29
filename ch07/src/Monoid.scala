@@ -4,7 +4,7 @@ trait Monoid[A] extends Semigroup[A]:
   def empty: A
 
 object Monoid:
-  def apply[A : Monoid as m]: Monoid[A] = m
+  def apply[A: Monoid as m]: Monoid[A] = m
 
   /*
   7.2.0.1 Exercise: The Truth About Monoids
@@ -33,7 +33,7 @@ object Monoid:
   /*
   7.2.0.2 Exercise: All Set for Monoids
   What monoids and semigroups are there for sets?
-  */
+   */
   given setUnionMonoid: [A] => Monoid[Set[A]]:
     def combine(a: Set[A], b: Set[A]) = a.union(b)
     def empty                         = Set.empty[A]

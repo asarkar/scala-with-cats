@@ -2,10 +2,9 @@ package ch04
 
 /*
 4.5 Exercise: Display Library
-*/
+ */
 trait Display[A]:
   def display(value: A): String
-
 
 object Display:
   given stringDisplay: Display[String]:
@@ -23,4 +22,4 @@ object Display:
 object DisplaySyntax:
   extension [A](value: A)(using p: Display[A])
     def display: String = p.display(value)
-    def print: Unit = Display.print(value)
+    def print: Unit     = Display.print(value)

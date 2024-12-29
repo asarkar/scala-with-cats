@@ -36,7 +36,7 @@ object Display:
   // Given a Display[A], and a Box[A], we can create
   // Display[Box[A]] by the reverse mapping Box[A] => A.
   // The forward mapping would be A => Box[A].
-  
+
   // Parameterized typeclass with named context bound.
-  given [A : Display as d] => Display[Box[A]] =
+  given [A: Display as d] => Display[Box[A]] =
     d.contramap[Box[A]](_.value)
